@@ -3,7 +3,8 @@
   --main-color: #00c7fc;
   --main-duration: 0.3s;
   --section-padding: 100px;
-  --p-color: #a8a8a8
+  --p-color: #a8a8a8;
+  --transparent-color: rgb(15 116 143 / 40%);
 }
 * {
   -webkit-box-sizing: border-box;
@@ -89,6 +90,16 @@ ul {
   line-height: 25px;
   font-weight: 300;
   color: var(--p-color);
+}
+
+.overlay{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(0 0 0 / 60%);
+  
 }
 /* End Components */
 
@@ -198,28 +209,21 @@ header .container nav .form:hover i {
 
 /* Start Landing */
 .landing{
-    min-height: 100vh;
+    min-height: 100dvh;
     background-color: #1f2021;
-    background-image: url('../images/cover2.jpg');
+    background-image: url('../images/cover4.jpg');
     background-size: cover;
     position: relative;
 
 }
-.landing .overlay{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgb(0 0 0 / 60%);
-}
+
 .landing .text{
     position: absolute;
     left: 0;
     top: 50%;
     transform: translateY(-50%);
     width: 50%;
-    background-color: rgb(15 116 143 / 40%);
+    background-color: var(--transparent-color);
     color: white;
     padding: 50px;
     display: flex;
@@ -297,7 +301,6 @@ header .container nav .form:hover i {
 .services{
   padding-top: var(--section-padding);
   padding-bottom: var(--section-padding);
-  /* min-height: 100vh; */
 }
 .services .services-content{
   display: grid;
@@ -339,3 +342,66 @@ header .container nav .form:hover i {
   color: var(--p-color);
 }
 /* End Services */
+
+/* Start Design */
+.design{
+  padding-top: var(--section-padding);
+  padding-bottom: var(--section-padding);
+  height: 600px;
+  position: relative;
+  background-image: url("../images/design-image.jpg") ;
+  background-size: cover;
+  background-position: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+.design .image,
+.design .text{
+  position: relative;
+  z-index: 2;
+  flex: 1;
+}
+.design .image{
+  text-align: center;
+}
+
+@media (max-width: 991px){
+  .design .image img{
+    height: 400px;
+    position: relative;
+    top: 110px;
+  }
+}
+@media (max-width: 767px){
+  .design .image{
+    display: none;
+  }
+}
+.design .image img{
+  position: relative;
+  bottom: -50px;
+}
+.design .text{
+  color: white;
+  padding: 50px;
+  background-color: var(--transparent-color);
+}
+.design .text h2{
+  font-size: 20px;
+  font-weight: 400;
+  margin-bottom: 40px;
+}
+.design .text ul li{
+  line-height: 2.5;
+}
+.design .text ul li::before{
+  content: "\e163";
+  font-family: "Font Awesome 7 Free";
+  font-weight: 900;
+  margin-right: 20px;
+  position: relative;
+  top: 1px;
+}
+/* End Design */
