@@ -5,6 +5,7 @@
   --section-padding: 100px;
   --p-color: #a8a8a8;
   --transparent-color: rgb(15 116 143 / 40%);
+
 }
 * {
   -webkit-box-sizing: border-box;
@@ -637,12 +638,12 @@ header .container nav .form:hover i {
   justify-content: center;
   align-items: center;
   clip-path: polygon(
-    50% 0%,
-    /*اعلي نقطه*/ 0% 25%,
-    /*تاني نقطه شمال*/ 0% 75%,
-    /*تالت نقطه شمال*/ 50% 100%,
-    /*رابع نقطه تحت*/ 100% 75%,
-    /*خامس نقطه تحت يمين*/ 100% 25% /*سادس نقطه فوق يمين*/
+    50% 0%,   /*اعلي نقطه*/ 
+    0% 25%,   /*تاني نقطه شمال*/ 
+    0% 75%,   /*تالت نقطه شمال*/ 
+    50% 100%, /*رابع نقطه تحت*/ 
+    100% 75%, /*خامس نقطه تحت يمين*/ 
+    100% 25%  /*سادس نقطه فوق يمين*/
   );
   background-color: #1f2021;
 }
@@ -682,3 +683,217 @@ header .container nav .form:hover i {
   }
 }
 /* End Statistics */
+ 
+/* Start Team Details */
+/* Start Testimonials */
+.team-details{
+  padding-top: var(--section-padding);
+  padding-bottom: var(--section-padding);
+}
+.team-details .container{
+  display: flex;
+  justify-content: space-between;
+}
+@media (max-width: 767px){
+  .team-details .container{
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+}
+.team-details .special-heading h2{
+  margin-bottom: 25px;
+  line-height: 24px;
+  font-size: 20px;
+  font-weight: 400;
+}
+.team-details .special-heading h2::before,
+.team-details .special-heading h2::after{
+  display: none;
+}
+.team-details .special-heading p{
+  margin-bottom: 40px;
+}
+.testimonials{
+  width: 50%;
+}
+@media (max-width: 767px){
+  .testimonials{
+    width: 100%;
+  }
+}
+.testimonials .testimonials-content {
+  position: relative;
+  margin-top: 60px;
+}
+.testimonials .testimonials-content .box{
+  display: flex;
+  justify-content: space-evenly;
+}
+.testimonials .testimonials-content .box .image{
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  overflow: hidden;
+  box-shadow: 0px 0px 8px 0px gray;
+}
+.testimonials .testimonials-content .box img{
+  width: 80px;
+}
+.testimonials .testimonials-content .box .details{
+  width: 60%;
+  margin-bottom: 50px;
+  position: relative;
+}
+.testimonials .testimonials-content .box .details p{
+  font-size: 13px;
+  line-height: 25px;
+  color: #1f2021;
+  font-weight: 300;
+  margin-bottom: 30px;
+}
+.testimonials .testimonials-content .box .details span{
+  font-size: 13px;
+  line-height: 24px;
+  color: var(--p-color);
+  font-style: italic;
+  font-weight: 300;
+  position: absolute;
+  bottom :0;
+  right: 0;
+  margin-bottom: 5px;
+}
+
+.testimonials .testimonials-content .bullets{
+    position: absolute;
+    width: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: space-evenly;
+}
+.testimonials .testimonials-content .bullets li{
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 1px solid #a9a9a9;
+
+}
+.testimonials .testimonials-content .bullets li.active{
+  background-color: var(--main-color);
+  border-color: var(--main-color);
+}
+/* End Testimonials */
+
+/* Start Skills */
+.skills{
+  width: 50%;
+}
+@media (max-width: 767px){
+  .skills{
+    padding-top: var(--section-padding);
+    width: 100%;
+  }
+}
+.skills .skills-content .box{
+  margin-left: 10%;
+  margin-bottom: 16px;
+}
+.skills .skills-content .box p{
+  color: #1f2021;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 24px;
+  text-transform: uppercase;
+}
+.skills .skills-content .box .progress-bar{
+  width: 90%;
+  height: 25px;
+  background-color: #dbdbdb;
+  position: relative;
+  
+}
+.skills .skills-content .box .progress-bar::before{
+  content: "";
+  width: var(--progress-width);
+  height: 100%;
+  position: absolute;
+  top: 0;
+  background-color: var(--main-color);
+}
+.skills .skills-content .box .progress-bar::after{
+  content: attr(data-progress);
+  width: 34px;
+  height: 23px;
+  background-color: #1f2021;
+  position: absolute;
+  top: -27px;
+  left: var(--progress-width);
+  transform: translateX(-50%);
+  clip-path: polygon(
+    0% 0%,
+    0% 80%,
+    35% 80%,
+    50% 100%,
+    65% 80%,
+    100% 80%,
+    100% 0%
+    );
+  color: #ffffff;
+  text-align: center;
+  line-height: 18px;
+  font-size: 11px;
+  font-weight: 400;
+}
+/* End Skills */
+/* End Team Details */
+
+/* Start Quote */
+.quote{
+  height: 400px;
+  background-image: url("../images/quote.jpg");
+  background-size: cover;
+  position: relative;
+}
+.quote .text{
+  width: 50%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #ffffff;
+}
+.quote .text q{
+  font-size: 25px;
+  line-height: 35px;
+  font-weight: 600;
+}
+.quote .text q::before{
+  content: "\f10d";
+  font-family: "Font Awesome 7 Free";
+  font-weight: 600;
+  margin-right: 10px;
+}
+.quote .text q::after{
+  content: "\f10e";
+  font-family: "Font Awesome 7 Free";
+  font-weight: 600;
+  margin-left: 10px;
+  
+}
+@media (max-width: 991px){
+  .quote .text{
+    width: 100%;
+    padding: 0 30px;
+  }
+  .quote .text q{
+    font-size: 20px;
+  }
+}
+.quote .text p{
+  font-size: 13px;
+  font-weight: 600;
+  margin-top: 30px;
+}
+/* End Quote */
