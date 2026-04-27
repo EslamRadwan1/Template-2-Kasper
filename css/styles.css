@@ -1184,6 +1184,7 @@ header .container nav .form:hover i {
   color: #1f2021;
   font-weight: 400;
   outline: none;
+  caret-color: var(--main-color);
 }
 .contact-us .content form .main-input::placeholder{
   color: #1f2021;
@@ -1199,6 +1200,7 @@ header .container nav .form:hover i {
   color: #1f2021;
   font-weight: 400;
   outline: none;
+  caret-color: var(--main-color);
 }
 .contact-us .content form input[type="submit"]{
   width: 200px;
@@ -1251,3 +1253,64 @@ header .container nav .form:hover i {
   color: #a8a8a8;
 }
 /* End Contact-Us */
+
+/* Start Footer */
+footer {
+  height: 400px;
+  background-image: url('../images/footer-image.jpg');
+  background-size: cover;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  position: relative;
+}
+footer .container{
+  height: 100%;
+  position: relative;
+  text-align: center;
+  color: #ffffff;
+}
+footer .container img{
+  width: 140px;
+  padding-top: 100px;
+  padding-bottom: 30px;
+}
+footer .container p:not(.copyright){
+  position: relative;
+  padding-bottom: 15px;
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+footer .container p:not(.copyright)::after{
+  content: "";
+  width: 230px;
+  height: 1px;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #ffffff;
+}
+footer .container .social-part{
+  padding-top: 15px;
+}
+footer .container .social-part i{
+  width: 14px;
+  height: 14px;
+  margin: 0 13px;
+  transition: var(--main-duration);
+}
+footer .container .social-part i:hover{
+  color: var(--main-color);
+}
+footer .container .copyright{
+  margin-top: 90px;
+  font-size: 15px;
+  font-weight: 600;
+}
+footer .container .copyright span{
+  font-weight: 800;
+  color: var(--main-color);
+}
+/* End Footer */
